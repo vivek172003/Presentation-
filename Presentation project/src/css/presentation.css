@@ -1326,4 +1326,25 @@ body {
 .keywords-cloud{
     padding-top: 50px;
 }
+.company-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
+.company-info img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.company-info img:hover {
+    transform: scale(1.1);
+}
+
+.company-name {
+    font-weight: 500;
+    display: flex;
+}
