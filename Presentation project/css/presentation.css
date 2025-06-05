@@ -1409,9 +1409,10 @@ body {
     transform: translateX(-50%);
     background: #E97132;
     color: white;
-    padding: 4px 12px;
+    padding: 12px 42px;
     border-radius: 12px;
-    font-size: 0.9em;
+    font-size: 1.3em;
+    font-weight: bold;
 }
 
 .market-data {
