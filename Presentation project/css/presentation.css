@@ -1534,3 +1534,14 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 }
+
+.sector-group p{
+    padding-bottom: 10px;
+}
+.strategy-definition{
+    padding-top: 10px;
+}
+
+.sector-card a{
+    font-weight: bold;
+}
