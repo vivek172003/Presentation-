@@ -516,7 +516,7 @@
 <div class="slide">
     <h1>Global Retail Leaders</h1>
     <div class="major-players-card">
-        <h2>Top 10 Global Retail Companies by Revenue (2024)</h2>
+        <h2>Top 10 Global Retail Companies by Revenue (2025)</h2>
         <div class="table-container">
       <table class="players-table">
         <thead>
@@ -654,132 +654,124 @@
 
 <!-- Slide 5: Market Analysis -->
 <div class="slide">
-    <h1>Retail Market Analysis 2024-2030</h1>
+    <h1>Retail Market Analysis 2025-2030</h1>
     <div class="analytics-card">
         <div class="key-metrics">
             <div class="metric-box">
-                <h3>Global Market</h3>
-                <span class="number">$30.6T</span>
-                <p>2024 Value</p>
-                <span class="trend">↑ 4.37% YoY (2023 vs 2024)</span>
+                <h3>Global Market 2025</h3>
+                <span class="number">$35.18T</span>
+                <p>Initial Value</p>
+                <span class="trend">↑ 7.65% CAGR through 2030</span>
             </div>
             <div class="metric-box">
-                <h3>U.S. Market</h3>
-                <span class="number">$7.26T</span>
-                <p>2024 Value</p>
-                <span class="trend">↑ 2.70% YoY (2023 vs 2024)</span>
+                <h3>Global Market 2030</h3>
+                <span class="number">$50.86T</span>
+                <p>Projected Value</p>
+                <span class="trend">↑ $15.68T Growth</span>
             </div>
             <div class="metric-box">
-                <h3>E-commerce</h3>
-                <span class="number">$6.01T</span>
-                <p>Global Online Sales</p>
-                <span class="trend">↑ 7.65% YoY (2023 vs 2024)</span>
+                <h3>Fastest Growing Region</h3>
+                <span class="region">Asia Pacific</span>
+                <p>Market Leader</p>
+                <span class="trend">Digital & E-commerce Growth</span>
             </div>
         </div>
 
-  <div class="charts-container">
-    <div class="chart-wrapper" data-tooltip="Shows retail market growth from $23.7T (2020) to projected $35.8T (2030), with 4.37% YoY growth in 2024">
-        <h3>Global Retail Growth (2020-2030)</h3>
-        <canvas id="globalGrowthChart"></canvas>
-    </div>
-    
-    <div class="chart-grid">
-        <div class="chart-wrapper" data-tooltip="Distribution between physical (80.4%) and online (19.6%) retail channels. E-commerce growing 7.65% YoY">
-            <h3>Sales Distribution 2025</h3>
-            <canvas id="channelDistributionChart"></canvas>
-        </div>
-        <div class="chart-wrapper" data-tooltip="U.S. market growth from $7.26T (2024) to projected $8.29T (2030), with 2.23% CAGR">
-            <h3>U.S. Market Projection</h3>
-            <canvas id="usProjectionChart"></canvas>
+        <div class="charts-container">
+            <div class="chart-wrapper" data-tooltip="Shows retail market growth from $35.18T (2025) to projected $50.86T (2030), with 7.65% CAGR">
+                <h3>Global Retail Growth (2025-2030)</h3>
+                <canvas id="globalGrowthChart"></canvas>
+            </div>
+            
+            <div class="chart-grid">
+                <div class="chart-wrapper" data-tooltip="Key market drivers including e-commerce, technology, and regional growth">
+                    <h3>Market Growth Drivers</h3>
+                    <canvas id="marketDriversChart"></canvas>
+                </div>
+                <div class="chart-wrapper" data-tooltip="Regional market distribution and growth rates">
+                    <h3>Regional Market Share</h3>
+                    <canvas id="regionalShareChart"></canvas>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-    </div>
-        <div class="references">
-            <a href="https://capitaloneshopping.com/research/retail-statistics/#:~:text=2024%20Retail%20Sales%20Statistics%201%20Global%20retail%20sales,2024%2C%20up%204.47%25%20from%202023%20Q4.%20More%20items" 
-               target="_blank" class="ref-link">
-                <span class="ref-icon">📊</span> Retail Statistics
-
-            </a>
-        </div>
-</div>
-
-
-
-
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <script>
-// Global Retail Growth Bar Chart
+// Updated Global Growth Chart
 const globalGrowth = new Chart(document.getElementById('globalGrowthChart'), {
     type: 'bar',
     data: {
-        labels: ['2020', '2025', '2030'],
+        labels: ['2025', '2030'],
         datasets: [{
-            label: 'Global Retail Sales (Trillion USD)',
-            data: [23.7, 35.18, 50.8],
-            backgroundColor: '#2ecc71'
+            label: 'Global Retail Market (Trillion USD)',
+            data: [35.18, 50.86],
+            backgroundColor: '#F96302'
         }]
     },
     options: {
         responsive: true,
         scales: {
             y: {
-                beginAtZero: true,
+                beginAtZero: false,
                 title: {
                     display: true,
-                    text: 'Trillion USD'
+                    text: 'Market Size (Trillion USD)'
                 }
+            }
+        },
+        plugins: {
+            title: {
+                display: true,
+                text: 'CAGR: 7.65%'
             }
         }
     }
 });
 
-// Channel Distribution Pie Chart
-const channelDist = new Chart(document.getElementById('channelDistributionChart'), {
-    type: 'pie',
+// Market Drivers Chart
+const marketDrivers = new Chart(document.getElementById('marketDriversChart'), {
+    type: 'doughnut',
     data: {
-        labels: ['Brick & Mortar', 'E-commerce'],
+        labels: ['E-commerce', 'Traditional Retail', 'Digital Payments'],
         datasets: [{
-            data: [80.4, 19.6],
-            backgroundColor: ['#3498db', '#2ecc71']
+            data: [35, 45, 20],
+            backgroundColor: ['#F96302', '#3498db', '#2ecc71']
         }]
     },
     options: {
         responsive: true,
         plugins: {
-            title: {
-                display: true,
-                text: '2024 Sales Distribution (%)'
+            legend: {
+                position: 'bottom'
             }
         }
     }
 });
 
-// U.S. Projection Line Chart
-const usProjection = new Chart(document.getElementById('usProjectionChart'), {
-    type: 'line',
+// Regional Share Chart
+const regionalShare = new Chart(document.getElementById('regionalShareChart'), {
+    type: 'radar',
     data: {
-        labels: ['2024', '2025', '2030'],
+        labels: ['North America', 'Asia Pacific', 'Europe', 'Latin America', 'Middle East'],
         datasets: [{
-            label: 'U.S. Retail Sales (Trillion USD)',
-            data: [7.26, 7.45, 8.29],
-            borderColor: '#2ecc71',
-            tension: 0.1
+            label: 'Growth Rate (%)',
+            data: [5.2, 7.65, 4.8, 3.9, 4.2],
+            borderColor: '#F96302',
+            backgroundColor: 'rgba(249, 99, 2, 0.2)'
         }]
     },
     options: {
         responsive: true,
         scales: {
-            y: {
-                beginAtZero: false
+            r: {
+                beginAtZero: true,
+                max: 8
             }
         }
     }
 });
 </script>
-
 
 
 <!-- Slide 6: Supply Chain -->
@@ -997,7 +989,7 @@ const usProjection = new Chart(document.getElementById('usProjectionChart'), {
                 </tr>
                 <tr>
                     <th>Base Year</th>
-                    <td>2024</td>
+                    <td>2025</td>
                 </tr>
                 <tr>
                     <th>Market Size (2025)</th>
@@ -1060,7 +1052,7 @@ const usProjection = new Chart(document.getElementById('usProjectionChart'), {
             </tr>
             <tr>
                 <th>Base Year</th>
-                <td>2024</td>
+                <td>2025</td>
             </tr>
             <tr>
                 <th>Market Size (2025)</th>
