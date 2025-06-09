@@ -29,6 +29,53 @@
 //     showSlide(currentSlide);
 // });
 
+// document.addEventListener('DOMContentLoaded', () => {
+//     const slides = document.querySelectorAll('.slide');
+//     const progress = document.querySelector('.progress');
+//     let currentSlide = 0;
+
+//     function showSlide(index) {
+//         // Hide all slides
+//         slides.forEach(slide => {
+//             slide.classList.remove('active');
+//             slide.style.display = 'none';
+//         });
+        
+//         // Show current slide
+//         slides[index].classList.add('active');
+//         slides[index].style.display = 'block';
+        
+//         // Update progress bar
+//         const progressWidth = ((index + 1) / slides.length) * 100;
+//         progress.style.width = `${progressWidth}%`;
+        
+//         // Update button states
+//         document.getElementById('prevBtn').disabled = index === 0;
+//         document.getElementById('nextBtn').disabled = index === slides.length - 1;
+//     }
+
+//     function nextSlide() {
+//         if (currentSlide < slides.length - 1) {
+//             currentSlide++;
+//             showSlide(currentSlide);
+//         }
+//     }
+
+//     function prevSlide() {
+//         if (currentSlide > 0) {
+//             currentSlide--;
+//             showSlide(currentSlide);
+//         }
+//     }
+
+//     // Event listeners
+//     document.getElementById('nextBtn').addEventListener('click', nextSlide);
+//     document.getElementById('prevBtn').addEventListener('click', prevSlide);
+    
+//     // Initialize first slide
+//     showSlide(0);
+// });
+
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.slide');
     const progress = document.querySelector('.progress');
@@ -68,7 +115,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Event listeners
+    // Add keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            // Right arrow or spacebar
+            nextSlide();
+        } else if (e.key === 'ArrowLeft') {
+            // Left arrow
+            prevSlide();
+        }
+    });
+
+    // Event listeners for buttons
     document.getElementById('nextBtn').addEventListener('click', nextSlide);
     document.getElementById('prevBtn').addEventListener('click', prevSlide);
     
