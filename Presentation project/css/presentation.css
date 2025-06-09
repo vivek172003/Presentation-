@@ -1545,3 +1545,245 @@ body {
 .sector-card a{
     font-weight: bold;
 }
+
+/* Add these styles for the credit card evolution popup */
+.history-table tr[data-timeline] {
+    cursor: pointer;
+    position: relative;
+}
+
+.evolution-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: none;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.evolution-details.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.evolution-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.flow-step {
+    text-align: center;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    min-width: 150px;
+}
+
+.flow-step .year {
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.flow-step .detail {
+    font-size: 0.8em;
+    color: #555;
+    margin-top: 5px;
+}
+
+.flow-arrow {
+    color: #F96302;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Close button styles */
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.close-popup:hover {
+    color: #F96302;  /* Home Depot orange */
+    background-color: rgba(249, 99, 2, 0.1);
+    transform: scale(1.1);
+}
+
+.close-popup:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(249, 99, 2, 0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Add to presentation.css */
+.evolution-timeline {
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.timeline-phase {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.phase-content {
+    flex: 1;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #F96302;
+}
+
+.phase-content h4 {
+    color: #F96302;
+    margin-bottom: 10px;
+}
+
+.phase-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.phase-details li {
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.phase-details li:before {
+    content: "•";
+    color: #F96302;
+    position: absolute;
+    left: 0;
+}
+
+.evolution-arrow {
+    padding: 0 20px;
+    color: #F96302;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.impact-section {
+    background: #fff7f0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.impact-card {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.impact-card h5 {
+    color: #F96302;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .timeline-phase {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .evolution-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+}
+/* Update the evolution details popup styles */
+.evolution-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: none;
+    max-width: 1000px;
+    width: 90%;
+    max-height: 80vh; /* Limit height to 80% of viewport height */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Customize scrollbar appearance */
+.evolution-details::-webkit-scrollbar {
+    width: 8px;
+}
+
+.evolution-details::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.evolution-details::-webkit-scrollbar-thumb {
+    background: #F96302;
+    border-radius: 4px;
+}
+
+.evolution-details::-webkit-scrollbar-thumb:hover {
+    background: #d65502;
+}
+
+/* Keep close button fixed at top */
+.close-popup {
+    position: sticky;
+    top: 0;
+    right: 15px;
+    float: right;
+    background: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    padding: 5px;
+    z-index: 1001;
+    transition: color 0.3s ease;
+}
+
+.close-popup:hover {
+    color: #F96302;
+}

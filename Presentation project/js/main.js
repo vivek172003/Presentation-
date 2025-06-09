@@ -133,3 +133,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize first slide
     showSlide(0);
 });
+
+// Add these functions to your main.js
+function showEvolution(element) {
+    const popup = document.getElementById('creditEvolution');
+    popup.classList.add('active');
+}
+
+function hideEvolution() {
+    const popup = document.getElementById('creditEvolution');
+    popup.classList.remove('active');
+}
+
+// Close popup when clicking outside
+document.addEventListener('click', (e) => {
+    const popup = document.getElementById('creditEvolution');
+    if (e.target !== popup && !popup.contains(e.target) && 
+        !e.target.closest('[data-timeline="credit-cards"]')) {
+        hideEvolution();
+    }
+});
