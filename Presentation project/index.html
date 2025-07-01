@@ -1112,6 +1112,135 @@ const regionalShare = new Chart(document.getElementById('regionalShareChart'), {
     </div>
 </div>
 
+
+
+<!--slide 7-->
+        <div class="slide">
+    <h1>Retail Market Analysis 2025-2030</h1>
+    <div class="analytics-card">
+        <div class="key-metrics">
+            <div class="metric-box">
+                <h3>Global Market 2025</h3>
+                <span class="number">$35.18T</span>
+                <p>Initial Value</p>
+                <span class="trend">↑ 7.65% CAGR through 2030</span>
+            </div>
+            <div class="metric-box">
+                <h3>Global Market 2030</h3>
+                <span class="number">$50.86T</span>
+                <p>Projected Value</p>
+                <span class="trend">↑ $15.68T Growth</span>
+            </div>
+            <div class="metric-box">
+                <h3>Fastest Growing Region</h3>
+                <span class="region">Asia Pacific</span>
+                <p>Market Leader</p>
+                <span class="trend">Digital & E-commerce Growth</span>
+            </div>
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-wrapper" data-tooltip="Shows retail market growth from $35.18T (2025) to projected $50.86T (2030), with 7.65% CAGR">
+                <h3>Global Retail Growth (2025-2030)</h3>
+                <canvas id="globalGrowthChart"></canvas>
+            </div>
+            
+            <div class="chart-grid">
+                <div class="chart-wrapper" data-tooltip="Key market drivers including e-commerce, technology, and regional growth">
+                    <h3>Market Growth Drivers</h3>
+                    <canvas id="marketDriversChart"></canvas>
+                </div>
+                <div class="chart-wrapper" data-tooltip="Regional market distribution and growth rates">
+                    <h3>Regional Market Share</h3>
+                    <canvas id="regionalShareChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+                <div class="references">
+            <a href="https://www.mordorintelligence.com/industry-reports/retail-industry" 
+               target="_blank" class="ref-link">
+                <span class="ref-icon">📊</span> Retail Market Analysis 2025-2030
+
+            </a>
+        </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// Updated Global Growth Chart
+const globalGrowth = new Chart(document.getElementById('globalGrowthChart'), {
+    type: 'bar',
+    data: {
+        labels: ['2025', '2030'],
+        datasets: [{
+            label: 'Global Retail Market (Trillion USD)',
+            data: [35.18, 50.86],
+            backgroundColor: '#F96302'
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: false,
+                title: {
+                    display: true,
+                    text: 'Market Size (Trillion USD)'
+                }
+            }
+        },
+        plugins: {
+            title: {
+                display: true,
+                text: 'CAGR: 7.65%'
+            }
+        }
+    }
+});
+
+// Market Drivers Chart
+const marketDrivers = new Chart(document.getElementById('marketDriversChart'), {
+    type: 'doughnut',
+    data: {
+        labels: ['E-commerce', 'Traditional Retail', 'Digital Payments'],
+        datasets: [{
+            data: [35, 45, 20],
+            backgroundColor: ['#F96302', '#3498db', '#2ecc71']
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'bottom'
+            }
+        }
+    }
+});
+
+// Regional Share Chart
+const regionalShare = new Chart(document.getElementById('regionalShareChart'), {
+    type: 'radar',
+    data: {
+        labels: ['North America', 'Asia Pacific', 'Europe', 'Latin America', 'Middle East'],
+        datasets: [{
+            label: 'Growth Rate (%)',
+            data: [5.2, 7.65, 4.8, 3.9, 4.2],
+            borderColor: '#F96302',
+            backgroundColor: 'rgba(249, 99, 2, 0.2)'
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            r: {
+                beginAtZero: true,
+                max: 8
+            }
+        }
+    }
+});
+</script>
 <!-- Update the US Outlook Card section -->
 <div class="slide">
 <h1>Future of Retail: Global & Regional Outlook</h1>
